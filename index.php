@@ -1,54 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <title>Welcome to Robotics Club</title>
-  <link rel="stylesheet" type="text/css" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-  <section class="header">
-    <nav>
-      <a href="index.html"><img src="images/logo.png" /></a>
-      <div class="nav-links">
-        <ul>
-          <li><a href="index.php">Home</a></li>
-          <li><a href="aboutus.php">About Us</a></li>
-          <li><a href="blog.php">Blog</a></li>
-          <li class="has-submenu">
-            <a href="#">Competition</a>
-            <ul class="submenu">
-              <li><a href="#">Local</a></li>
-              <li><a href="#">Domestic</a></li>
-              <li><a href="#">International</a></li>
-            </ul>
-          </li>
-          <li><a href="notice.php">Notices</a></li>
-          <li><a href="#">User</a></li>
-          <li><a href="#">FAQs</a></li>
-        </ul>
-      </div>
-    </nav>
-    <main>
-      <div class="content-container">
-        <section id="home" class="welcome-section">
-          <h1 class="typing-text">
-            Welcome to Robotics Club, we are glad to see you here
-          </h1>
-          <p class="vision">
-            The website is for giving shelter to all the robo masters
-          </p>
-        </section>
-      </div>
-    </main>
-  </section>
-
-  <footer id="footer">
-    <div class="footer-content">
-      <p>The website is made by Tabia Morshed</p>
-      <img src="images/author.jpg" alt="Author Image" width="20" height="20" />
+    <div class="background">
+        <form class="form-container" method="post" action="home.php">
+            <h2>Sign In</h2>
+            <div class="input-container">
+                <label class="input-label" for="email">Email</label>
+                <input class="input-field" type="email" id="email" name="email" required>
+            </div>
+            <div class="input-container">
+                <label class="input-label" for="password">Password</label>
+                <input class="input-field" type="password" id="password" name="password" required>
+            </div>
+            <button class="submit-button" type="submit">Sign In</button>
+            <p class="signup-link">Don't have an account? <a href="signup.php">Sign up</a></p>
+        </form>
     </div>
-  </footer>
 </body>
 
 </html>
