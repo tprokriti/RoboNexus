@@ -733,6 +733,94 @@ button:hover {
 /* ... Rest of your existing CSS rules ... */
 
 /*-----------------------End-Of-faq----------------------*/
+/*-----------------------National----------------------*/
+.background {
+  background-image: url("images/nationalbg.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh; /* Adjust as needed */
+  text-align: center;
+  color: white;
+  padding-top: 100px; /* Adjust as needed */
+}
+.nation {
+  background-color: transparent;
+  color: #ffffff;
+  padding: 300px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.nation h1 {
+  font-size: 46px;
+  font-weight: bold;
+  transition: color 0.3s; /* Add transition for smooth hover effect */
+}
+
+.nation h1:hover {
+  color: rgb(209, 54, 54); /* Change the title color on hover */
+}
+.page-title {
+  font-size: 36px;
+  margin: 0 auto; /* Center horizontally */
+  text-align: center;
+  color: white;
+  position: absolute;
+  top: 1040px;
+  font-weight: bold; /* Adjust this value to control the distance from the top */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.competition-rules {
+  font-size: 28px;
+  list-style-type: disc;
+  max-width: 800px;
+  margin: -350px auto 0; /* Adjust this value to shift the rules further up */
+  text-align: left; /* Align the rules to the left */
+  color: rgb(0, 0, 0);
+  position: relative; /* Add relative positioning */
+  left: -300px; /* Adjust this value to shift the rules to the left */
+}
+.competition-rules li:hover {
+  color: red; /* Change the color to red on hover */
+}
+.competition-rules p {
+  font-size: 34px;
+  font-weight: bold;
+}
+.button-and-rules {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Adjust this as needed */
+}
+.google-form-button {
+  display: inline-block;
+  padding: 15px 30px; /* Increase padding for larger button */
+  background-color: #4caf50; /* Green color */
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 20px; /* Increase font size for larger button text */
+  font-weight: bold;
+  border: 2px solid #ffc107; /* Add border */
+  transition: background-color 0.3s; /* Add transition effect */
+}
+
+.google-form-button a {
+  color: white;
+  text-decoration: none;
+}
+
+.google-form-button:hover {
+  background-color: #ffc107; /* Change to yellow on hover */
+  border-color: #4caf50; /* Change border color on hover */
+}
+/*-----------------------End-Of-National----------------------*/
+
 footer {
   position: fixed;
   bottom: 0;
