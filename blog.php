@@ -12,20 +12,19 @@
       <a href="index.html"><img src="images/logo.png" /></a>
       <div class="nav-links">
         <ul>
-          <li><a href="index.php">Home</a></li>
+          <li><a href="home.php">Home</a></li>
           <li><a href="aboutus.php">About Us</a></li>
           <li><a href="blog.php">Blog</a></li>
           <li class="has-submenu">
-            <a href="#">Competition</a>
+            <a href="competition.php">Competition</a>
             <ul class="submenu">
-              <li><a href="#">Local</a></li>
-              <li><a href="#">Domestic</a></li>
-              <li><a href="#">International</a></li>
+              <li><a href="local.php">Local</a></li>
+              <li><a href="national.php">National</a></li>
+              <li><a href="international.php">International</a></li>
             </ul>
           </li>
           <li><a href="notice.php">Notices</a></li>
-          <li><a href="#">User</a></li>
-          <li><a href="#">FAQs</a></li>
+          <li><a href="faq.php">FAQs</a></li>
         </ul>
       </div>
     </nav>
@@ -36,7 +35,6 @@
   </section>
   </main>
 
-  <!-- About Our Components Section -->
   <section class="about-components-container">
     <div class="about-components">
       <h2>About Our Components</h2>
@@ -123,12 +121,9 @@
             <p> Male ends have a pin protruding and can plug into things, while female ends do not and are used to plug things into.</p>
           </div>
         </div>
-        <!-- Add more components with anchor tags around the images here -->
       </div>
-      <!-- Component content (unchanged) -->
     </div>
   </section>
-  <!-- Our Modules Section -->
   <section class="our-modules-container">
     <div class="our-modules">
       <h2>Our Modules</h2>
@@ -138,24 +133,9 @@
         enthusiast seeking advanced challenges, we have the right module for you. Our expert instructors will guide you through hands-on projects and help you gain valuable
         knowledge in the field of robotics.
       </p>
-      <!-- Add your content here for the modules section -->
     </div>
   </section>
   </main>
-
-  <!-- Our Modules Section -->
-  <section class="our-modules-container">
-    <div class="our-modules">
-      <h2>Our Modules</h2>
-      <div class="separator"></div>
-      <p>
-        Our robotics club offers various modules to cater to different interests and skill levels. Whether you're a beginner looking to get started in robotics or an experienced
-        enthusiast seeking advanced challenges, we have the right module for you. Our expert instructors will guide you through hands-on projects and help you gain valuable
-        knowledge in the field of robotics.
-      </p>
-      <!-- Add your content here for the modules section -->
-    </div>
-  </section>
   <footer id="footer">
     <div class="footer-content">
       <p>The website is made by Tabia Morshed</p>

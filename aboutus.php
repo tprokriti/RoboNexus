@@ -12,20 +12,19 @@
       <a href="index.html"><img src="images/logo.png" /></a>
       <div class="nav-links">
         <ul>
-          <li><a href="index.php">Home</a></li>
+          <li><a href="home.php">Home</a></li>
           <li><a href="aboutus.php">About Us</a></li>
           <li><a href="blog.php">Blog</a></li>
           <li class="has-submenu">
-            <a href="#">Competition</a>
+            <a href="competition.php">Competition</a>
             <ul class="submenu">
-              <li><a href="#">Local</a></li>
-              <li><a href="#">Domestic</a></li>
-              <li><a href="#">International</a></li>
+              <li><a href="local.php">Local</a></li>
+              <li><a href="national.php">National</a></li>
+              <li><a href="international.php">International</a></li>
             </ul>
           </li>
           <li><a href="notice.php">Notices</a></li>
-          <li><a href="#">User</a></li>
-          <li><a href="#">FAQs</a></li>
+          <li><a href="faq.php">FAQs</a></li>
         </ul>
       </div>
     </nav>
@@ -139,7 +138,6 @@
         <p class="name">Competition</p>
         <p class="description">We arrange competitions once in a month</p>
       </div>
-      <!-- Add more activity items as needed -->
     </div>
   </section>
   </main>
