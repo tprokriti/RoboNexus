@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Notices</title>
+  <title>Post Notice - Robotics Club</title>
   <link rel="stylesheet" type="text/css" href="styles.css" />
 </head>
 
@@ -12,6 +12,7 @@
       <a href="index.html"><img src="images/logo.png" /></a>
       <div class="nav-links">
         <ul>
+          <li><a href="index.php">Welcome</a></li>
           <li><a href="home.php">Home</a></li>
           <li><a href="aboutus.php">About Us</a></li>
           <li><a href="blog.php">Blog</a></li>
@@ -31,35 +32,36 @@
     <main>
       <div class="content-container">
         <section id="home" class="welcome-section">
-          <h1>Club's Notices</h1>
-          <p>
-            This page contains all the notices that have been posted by the
-            club. You can search for notices by entering the subject of the
-            notice in the search bar.
-          </p>
-        </section>
-        <section id="notices">
-          <h2>Notices</h2>
-          <input type="text" id="search" placeholder="Search for notices..." />
-          <ul id="notice-list">
-            <?php foreach ($notices as $notice) { ?>
-              <li>
-                <a href="#"><?php echo $notice; ?></a>
-              </li>
-            <?php } ?>
-          </ul>
-        </section>
-        <section id="post-notice">
-          <h2>Post a notice</h2>
-          <form action="post_notice.php" method="POST">
-            <input type="text" name="subject" placeholder="Subject" />
-            <textarea name="notice" placeholder="Notice"></textarea>
-            <input type="submit" value="Post" />
-          </form>
+          <h1 class="typing-text">
+            Welcome to the Notice Section
+          </h1>
         </section>
       </div>
     </main>
   </section>
+
+  <main>
+    <div class="notice-section">
+      <div class="background-image"></div>
+      <div class="notice-section">
+        <div class="content-container">
+          <section>
+            <h1 class="larger-heading">Post Notice</h1>
+            <form action="notice.php" method="POST">
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" class="larger-input" required>
+              </div>
+              <div class="form-group">
+                <label for="notice">Notice</label>
+                <input type="text" id="notice" name="notice" class="larger-textarea" required>
+              </div>
+              <button type="submit" name="post_notice" class="larger-button">Submit</button>
+            </form>
+          </section>
+        </div>
+      </div>
+  </main>
 
   <footer id="footer">
     <div class="footer-content">

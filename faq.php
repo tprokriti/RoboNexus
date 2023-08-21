@@ -14,6 +14,7 @@
             <a href="index.html"><img src="images/logo.png" /></a>
             <div class="nav-links">
                 <ul>
+                    <li><a href="index.php">Welcome</a></li>
                     <li><a href="home.php">Home</a></li>
                     <li><a href="aboutus.php">About Us</a></li>
                     <li><a href="blog.php">Blog</a></li>

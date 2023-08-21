@@ -2,8 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="styles.css">
     <title>Local Page</title>
 </head>
@@ -14,6 +13,7 @@
             <a href="index.html"><img src="images/logo.png" /></a>
             <div class="nav-links">
                 <ul>
+                    <li><a href="index.php">Welcome</a></li>
                     <li><a href="home.php">Home</a></li>
                     <li><a href="aboutus.php">About Us</a></li>
                     <li><a href="blog.php">Blog</a></li>
@@ -38,45 +38,52 @@
 
 
     <div class="backgroundn">
-        <h2 class="page-title">Do you want to participate in RoboKick (Robot soccer) Segment?</h2>
+        <h2 class="page-title">"PathMaster Pursuit: Precision Line Following Challenge"</h2>
         <div class="button-and-rules">
             <div class="competition-rules">
-                <p>Rules for RoboKick</p>
+                <p>Rules for PathMaster Pursuit</p>
                 <ul>
-                    <li> Each team consists of multiple robots. The exact number of robots per team can vary.</li>
-                    <li> The playing field mirrors a soccer field, complete with goals at opposing ends. </li>
-                    <li> Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
-                    <li> The primary goal is to score by propelling the ball into the opponent's goal.</li>
-                    <li> Matches consist of two halves with a halftime break.</li>
-                    <li> A goal is awarded when the ball completely crosses the goal line into the opposing team's goal. </li>
-                    <li> Physical contact between robots is generally permissible, but excessive or harmful contact may lead to penalties.</li>
-                    <li> Robots committing infractions or violating rules may face penalties. </li>
+                    <li> Robots should be autonomous and operate without external control during the competition.</li>
+                    <li> TSensors (such as infrared or reflective sensors) are used to detect the line and adjust the robot's movement. </li>
+                    <li> The objective is to guide the robot to follow the line and reach the designated ending point.</li>
+                    <li> Robots must detect and follow the marked line accurately.</li>
+                    <li> Sensors are used to determine the robot's position relative to the line, helping it make adjustments to stay on course.</li>
+                    <li> Robots are timed as they navigate the line. </li>
+                    <li> Bonus points can be awarded for completing the challenge in the shortest time or for demonstrating exceptionally precise control.</li>
+                    <li> Any attempts to gain an unfair advantage may result in disqualification. </li>
                 </ul>
             </div>
             <div class="google-form-button">
                 <a href="https://forms.gle/xCJVp8ZbDqwwKCNN9" target="_blank">Click For Register</a>
             </div>
         </div>
+        <div class="pdf-download-button">
+            <a href="rulebook/PathMaster Pursuit.pdf" download>click for more</a>
+        </div>
     </div>
     <section class="background2">
 
-        <div class="page-title">Do you want to participate in TraceBots (Line-following robots) Segment?</div>
+        <div class="page-title">"SkyQuest: Aerial Drone Mastery Challenge"</div>
 
         <div class="competition-rules">
-            <p>Rules of our another competition</p>
+            <p>Rules for SkyQuest</p>
             <ul>
-                <li> Each team consists of multiple robots. The exact number of robots per team can vary.</li>
-                <li> The playing field mirrors a soccer field, complete with goals at opposing ends. </li>
-                <li> Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
-                <li> The primary goal is to score by propelling the ball into the opponent's goal.</li>
-                <li> Matches consist of two halves with a halftime break.</li>
-                <li> A goal is awarded when the ball completely crosses the goal line into the opposing team's goal. </li>
-                <li> Physical contact between robots is generally permissible, but excessive or harmful contact may lead to penalties.</li>
-                <li> Robots committing infractions or violating rules may face penalties. </li>
+                <li> Drones should be in compliance with local regulations and safety standards.</li>
+                <li> The competition can have different tasks for drones to complete, such as obstacle avoidance, payload delivery, aerial photography, etc. </li>
+                <li> Each task is designed to challenge the drone's capabilities and the team's programming skills.</li>
+                <li> TDrones are tasked with picking up and delivering objects to specific drop-off points.</li>
+                <li> The drone's programming should allow it to complete tasks without remote control.</li>
+                <li> Emergency procedures should be in place in case of unexpected drone behavior. </li>
+                <li> Each task might have specific scoring criteria.</li>
+                <li> Judges evaluate the drones based on task completion, accuracy, and adherence to rules. </li>
             </ul>
         </div>
+
         <div class="google-form-button">
             <a href="https://forms.gle/xCJVp8ZbDqwwKCNN9" target="_blank">Click For Register</a>
+        </div>
+        <div class="pdf-download-button">
+            <a href="rulebook/SkyQuest.pdf" download>click for more</a>
         </div>
 
 

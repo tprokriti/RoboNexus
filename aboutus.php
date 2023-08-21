@@ -12,6 +12,7 @@
       <a href="index.html"><img src="images/logo.png" /></a>
       <div class="nav-links">
         <ul>
+          <li><a href="index.php">Welcome</a></li>
           <li><a href="home.php">Home</a></li>
           <li><a href="aboutus.php">About Us</a></li>
           <li><a href="blog.php">Blog</a></li>
@@ -30,7 +31,7 @@
     </nav>
     <main>
       <section class="about-section">
-        <h1>About Us</h1>
+        <h1>AboutUs</h1>
       </section>
   </section>
   </main>
@@ -48,37 +49,49 @@
 
   <section class="club-hierarchy">
     <div class="hierarchy-member">
-      <img src="images/president.jpg" alt="President" />
+      <a href="https://www.linkedin.com/feed/" target="_blank">
+        <img src="images/president.jpg" alt="President" />
+      </a>
       <p class="name">John Doe</p>
       <p class="job-title">Software Engineer</p>
       <p class="designation">President</p>
     </div>
     <div class="hierarchy-member">
-      <img src="images/treasurer.jpg" alt="Treasurer" />
+      <a href="https://www.linkedin.com/feed/" target="_blank">
+        <img src="images/treasurer.jpg" alt="Treasurer" />
+      </a>
       <p class="name">Jane Smith</p>
       <p class="job-title">Teacher</p>
       <p class="designation">Treasurer</p>
     </div>
     <div class="hierarchy-member">
-      <img src="images/vp.jpg" alt="Vice President" />
+      <a href="https://www.linkedin.com/feed/" target="_blank">
+        <img src="images/vp.jpg" alt="Vice President" />
+      </a>
       <p class="name">Mike Johnson</p>
       <p class="job-title">Nurse</p>
       <p class="designation">Vice President</p>
     </div>
     <div class="hierarchy-member">
-      <img src="images/gs.jpg" alt="General Secretary" />
+      <a href="https://www.linkedin.com/feed/" target="_blank">
+        <img src="images/gs.jpg" alt="General Secretary" />
+      </a>
       <p class="name">Sarah Brown</p>
       <p class="job-title">Banker</p>
       <p class="designation">General Secretary</p>
     </div>
     <div class="hierarchy-member">
-      <img src="images/js.jpeg" alt="Joint Secretary" />
+      <a href="https://www.linkedin.com/feed/" target="_blank">
+        <img src="images/js.jpeg" alt="Joint Secretary" />
+      </a>
       <p class="name">Alex Lee</p>
       <p class="job-title">Engineering</p>
       <p class="designation">Joint Secretary</p>
     </div>
     <div class="hierarchy-member">
-      <img src="images/sub_js.jpg" alt="Sub Joint Secretary" />
+      <a href="https://www.linkedin.com/feed/" target="_blank">
+        <img src="images/sub_js.jpg" alt="Sub Joint Secretary" />
+      </a>
       <p class="name">Emily Wilson</p>
       <p class="job-title">Scientist</p>
       <p class="designation">Sub Joint Secretary</p>
@@ -91,22 +104,30 @@
     </div>
     <div class="executive-member-container">
       <div class="executive-member">
-        <img src="images/executive1.jpg" alt="Executive 1" />
+        <a href="https://www.linkedin.com/feed/" target="_blank">
+          <img src="images/executive1.jpg" alt="Executive 1" />
+        </a>
         <p class="name">David Johnson</p>
         <p class="job-title">Architect</p>
       </div>
       <div class="executive-member">
-        <img src="images/executive2.jpg" alt="Executive 2" />
+        <a href="https://www.linkedin.com/feed/" target="_blank">
+          <img src="images/executive2.jpg" alt="Executive 2" />
+        </a>
         <p class="name">Emma Wilson</p>
         <p class="job-title">Graphic Designer</p>
       </div>
       <div class="executive-member">
-        <img src="images/executive3.jpg" alt="Executive 3" />
+        <a href="https://www.linkedin.com/feed/" target="_blank">
+          <img src="images/executive3.jpg" alt="Executive 3" />
+        </a>
         <p class="name">Michael Brown</p>
         <p class="job-title">Marketing Specialist</p>
       </div>
       <div class="executive-member">
-        <img src="images/executive4.jpg" alt="Executive 4" />
+        <a href="https://www.linkedin.com/feed/" target="_blank">
+          <img src="images/executive4.jpg" alt="Executive 4" />
+        </a>
         <p class="name">Sophia Lee</p>
         <p class="job-title">Product Manager</p>
       </div>
@@ -117,24 +138,32 @@
     <div class="separator"></div>
     <div class="activity-description">
       <div class="activity-item">
-        <img src="images/activity1.jpg" alt="Activity 1" />
+        <a href="https://youtu.be/pwwVOpXrazs" target="_blank">
+          <img src="images/activity1.jpg" alt="Activity 1" />
+        </a>
         <p class="name">Workshop</p>
         <p class="description">We arrange workshops twice in a month</p>
       </div>
       <div class="activity-item">
-        <img src="images/activity2.jpg" alt="Activity 2" />
+        <a href="https://youtu.be/pwwVOpXrazs" target="_blank">
+          <img src="images/activity2.jpg" alt="Activity 2" />
+        </a>
         <p class="name">Seminar</p>
         <p class="description">
           Renowned personalities attend our Seminars
         </p>
       </div>
       <div class="activity-item">
-        <img src="images/activity3.jpg" alt="Activity 2" />
+        <a href="https://youtu.be/pwwVOpXrazs" target="_blank">
+          <img src="images/activity3.jpg" alt="Activity 2" />
+        </a>
         <p class="name">Festivals</p>
         <p class="description">We arrange festivals once in a month</p>
       </div>
       <div class="activity-item">
-        <img src="images/activity4.jpg" alt="Activity 2" />
+        <a href="https://youtu.be/pwwVOpXrazs" target="_blank">
+          <img src="images/activity4.jpg" alt="Activity 2" />
+        </a>
         <p class="name">Competition</p>
         <p class="description">We arrange competitions once in a month</p>
       </div>

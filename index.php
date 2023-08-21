@@ -1,52 +1,68 @@
 <?php
-include 'config.php';
+session_start();
 
-$msg = '';
-
-if (isset($_POST['login'])) {
-    $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $verification_code = mysqli_real_escape_string($conn, $_POST['verification_code']);
-
-    $query = "SELECT * FROM users WHERE email='{$email}' AND code='{$verification_code}'";
-    $result = mysqli_query($conn, $query);
-
-    if (mysqli_num_rows($result) > 0) {
-        // Verification successful, allow user to log in
-        $user = mysqli_fetch_assoc($result);
-        $hashed_password = $user['password'];
-
-        if (password_verify($_POST['password'], $hashed_password)) {
-            $msg = "<div class='alert alert-success'>Login successful.</div>";
-        } else {
-            $msg = "<div class='alert alert-danger'>Invalid password.</div>";
-        }
-    } else {
-        $msg = "<div class='alert alert-danger'>Invalid email or verification code.</div>";
-    }
+if (!isset($_SESSION['username'])) {
+    $_SESSION['msg'] = "You must log in first";
+    header('location: login.php');
+}
+if (isset($_GET['logout'])) {
+    session_destroy();
+    unset($_SESSION['username']);
+    header("location: login.php");
 }
 ?>
-
 <!DOCTYPE html>
 <html>
 
 <head>
+    <title>Welcome to Robotics Club</title>
     <link rel="stylesheet" type="text/css" href="styles.css" />
 </head>
 
 <body>
-    <div class="background">
-        <div class="form-container">
-            <h2>Login</h2>
-            <?php echo $msg; ?>
-            <form method="post">
-                <input type="email" id="email" name="email" placeholder="Email" required />
-                <input type="text" id="verification_code" name="verification_code" placeholder="Verification Code" required />
-                <input type="password" id="password" name="password" placeholder="Password" required />
-                <button type="submit" name="login">Log In</button>
-            </form>
-            <p class="signin-link">Don't have an account? <a href="signup.php">Sign up</a></p>
-        </div>
-    </div>
+    <section class="header">
+        <nav>
+            <a href="index.html"><img src="images/logo.png" /></a>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="home.php">Home</a></li>
+                    <li><a href="aboutus.php">About Us</a></li>
+                    <li><a href="blog.php">Blog</a></li>
+                    <li class="has-submenu">
+                        <a href="competition.php">Competition</a>
+                        <ul class="submenu">
+                            <li><a href="local.php">Local</a></li>
+                            <li><a href="national.php">National</a></li>
+                            <li><a href="international.php">International</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="notice.php">Notices</a></li>
+                    <li><a href="faq.php">FAQs</a></li>
+                </ul>
+            </div>
+        </nav>
+        <main>
+
+            <div class="content">
+                <h2>Welcome to my project</h2>
+
+                <?php if (isset($_SESSION['success'])) : ?>
+                    <div class="error success">
+                        <h3>
+                            <?php
+                            echo $_SESSION['success'];
+                            unset($_SESSION['success']);
+                            ?>
+                        </h3>
+                    </div>
+                <?php endif ?>
+
+                <?php if (isset($_SESSION['username'])) : ?>
+                    <p> <strong><?php echo $_SESSION['username']; ?></strong></p>
+                    <p> <a href="index.php?logout='1'" style="color: red;">logout</a> </p>
+                <?php endif ?>
+            </div>
+
 </body>
 
 </html>

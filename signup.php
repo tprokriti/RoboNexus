@@ -1,89 +1,76 @@
 <?php
-include 'config.php';
-$msg = "";
+require 'connect.php';
 
-use SendGrid\Mail\Mail;
-use SendGrid\Client;
-
-if (isset($_POST['submit'])) {
-    $username = mysqli_real_escape_string($conn, $_POST['username']);
-    $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $password = mysqli_real_escape_string($conn, $_POST['password']);
-    $confirm_password = mysqli_real_escape_string($conn, $_POST['confirm-password']);
-    $verification_code = md5(rand());
-
-    if (mysqli_num_rows(mysqli_query($conn, "SELECT * FROM users WHERE email='{$email}'")) > 0) {
-        $msg = "<div style='color: red;'>{$email} - This email address has already been registered.</div>";
-    } else {
-        if ($password === $confirm_password) {
-            $hashed_password = password_hash($password, PASSWORD_DEFAULT); // Hash the password
-            $sql = "INSERT INTO users (username, email, password, code) VALUES ('{$username}', '{$email}', '{$hashed_password}', '{$verification_code}')";
-            $result = mysqli_query($conn, $sql);
-
-            if ($result) {
-                // Send the verification email
-                $email = new Mail();
-                $email->setFrom('tabiamorshed@gmail.com', 'Tabia Morshed');
-                $email->setSubject('Email Verification');
-                $email->addTo($email);
-                $email->addContent(
-                    'text/html',
-                    "<p>Your verification code: {$verification_code}</p>"
-                );
-
-                $sendgrid = new \SendGrid('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');
-
-                try {
-                    $response = $sendgrid->send($email);
-
-                    if ($response->statusCode() === 202) {
-                        $msg = "<div class='alert alert-info'>We've sent a verification code to your email.</div>";
-                    } else {
-                        $msg = "<div class='alert alert-danger'>Failed to send verification email.</div>";
-                    }
-                } catch (Exception $e) {
-                    $msg = "<div class='alert alert-danger'>Something went wrong while sending the verification email.</div>";
-                }
-            } else {
-                $msg = "<div class='alert alert-danger'>Something went wrong while registering user.</div>";
-            }
-        } else {
-            $msg = "<div class='alert alert-danger'>Password and Confirm Password do not match.</div>";
-        }
-    }
-}
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 
 <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="styles.css" />
+    <title>Login</title>
 </head>
 
 <body>
-    <div class="background">
-        <div class="form-container">
-            <h2>Sign Up</h2>
-            <?php echo $msg; ?>
-            <form method="post">
-                <input type="text" id="username" name="username" placeholder="Username" value="<?php if (isset($_POST['submit'])) {
-                                                                                                    echo $username;
-                                                                                                } ?>" pattern="[A-Za-z]+" title="Only alphabets are allowed" required />
 
-                <input type="email" id="email" name="email" placeholder="Email" value="<?php if (isset($_POST['submit'])) {
-                                                                                            echo $email;
-                                                                                        } ?>" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please enter a valid email address" required />
+    <div class="d-flex justify-content-center align-items-center">
+        <div class="background">
 
-                <input type="password" id="password" name="password" placeholder="Password" pattern="^(?=.*[A-Za-z])(?=.*\d).{7,}$" title="Password must contain at least one alphabet, one digit, and be at least 8 characters long" required />
+            <div class="content">
+                <div class="row">
 
-                <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm Password" pattern="^(?=.*[A-Za-z])(?=.*\d).{7,}$" title="Password must match the previous password" required />
+                    <div class="col-md-5 login-form">
+                        <form class="row" action="signup.php" method="POST" novalidate>
+                            <div class="col-md-12 mb-4">
+                                <label for="inputEmail4" class="form-label">Username</label>
+                                <span style="color: red">
+                                    <?php
+                                    if (isset($_SESSION['username_error_message']) and !empty($_SESSION['username_error_message'])) {
+                                        echo $_SESSION['username_error_message'];
+                                    }
+                                    ?>
+                                </span>
+                                <input type="text" class="form-control" id="inputUserName" name='username'>
+                            </div>
+                            <div class=" col-md-12 mb-4">
+                                <label for="inputEmail4" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="inputEmail4" name="email" style="width: 500%; max-width: 400px;" required pattern="[a-zA-Z0-9._%+-]+@gmail\.com$" title="Email should be a valid Gmail address">
+                            </div>
+                            <div class="col-md-12 mb-4">
+                                <label for="inputPassword4" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="inputPassword4" name="password" style="width: 500%; max-width: 400px;" required pattern="(?=.*\d)(?=.*[a-zA-Z]).{6,}" title="Password should have at least 6 characters and include both letters and numbers">
+                            </div>
 
-                <button type="submit" name="submit">Sign Up</button>
-            </form>
-            <p class="signin-link">Already have an account? <a href="index.php">Sign in</a></p>
+                    </div>
+
+                    <div class="col-12 input-group">
+                        <button type="submit" class="btn btn-primary" name="register">Sign Up</button>
+                    </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
+    </div>
+    <script src="js/bootstrap.js"></script>
 </body>
 
 </html>
+
+<?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $conn = connect();
+    $insert_query = "INSERT INTO form (username,email,password) values('$username','$email','$password')";
+    mysqli_query($conn, $insert_query);
+    session_start();
+    $_SESSION['insert_query'] = $insert_query;
+    header("Location: login.php");
+}
+?>

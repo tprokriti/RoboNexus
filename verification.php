@@ -1,6 +1,8 @@
 <?php
 include 'config.php';
 
+$msg = '';
+
 if (isset($_GET['email']) && isset($_GET['code'])) {
     $email = mysqli_real_escape_string($conn, $_GET['email']);
     $code = mysqli_real_escape_string($conn, $_GET['code']);
@@ -24,13 +26,31 @@ if (isset($_GET['email']) && isset($_GET['code'])) {
             mysqli_stmt_bind_param($delete_stmt, 's', $email);
             mysqli_stmt_execute($delete_stmt);
 
-            echo "<p>Thank you! Your email has been successfully verified. You can now <a href='login.php'>log in</a>.</p>";
+            $msg = "<p>Thank you! Your email has been successfully verified. You can now <a href='index.php'>log in</a>.</p>";
         } else {
-            echo "<p>Oops! Something went wrong while verifying your email. Please try again later.</p>";
+            $msg = "<p>Oops! Something went wrong while verifying your email. Please try again later.</p>";
         }
     } else {
-        echo "<p>Invalid verification link. Please make sure you clicked the correct link or request a new verification email.</p>";
+        $msg = "<p>Invalid verification link. Please make sure you clicked the correct link or request a new verification email.</p>";
     }
 } else {
-    echo "<p>Invalid verification link. Please make sure you clicked the correct link or request a new verification email.</p>";
+    $msg = "<p>Invalid verification link. Please make sure you clicked the correct link or request a new verification email.</p>";
 }
+?>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+
+<body>
+    <div class="background">
+        <div class="form-container">
+            <?php echo $msg; ?>
+        </div>
+    </div>
+</body>
+
+</html>
